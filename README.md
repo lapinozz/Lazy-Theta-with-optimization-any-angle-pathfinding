@@ -10,4 +10,4 @@ I rewrote most of it because the code style dind't suite me and to take advantag
 
 I also made it more modular so that it can be used for grid, hexagonTile, polygon map, anything where you need to find a path between to point.
 
-Also added weight to h-value as described in the first link, it make the search faster but may give slitghly longer path.
+Also added the possibility to use weighted h-value as described in the first link, it make the search faster but may give slitghly longer path.
