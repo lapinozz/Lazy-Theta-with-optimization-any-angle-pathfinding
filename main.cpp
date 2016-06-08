@@ -62,30 +62,32 @@ int main()
     //doing the search
     //merly to show the point of how it work
     //as it would have been way easier to simply transform the vector to id and pass it to search
-    //auto path = pathfinder.search(adaptor.posToId(startPoint), adaptor.posToId(endPoint));
-    auto path = pathfinder.search(startPoint, endPoint,
-                                        {
-                                            [&adaptor](const auto id)
-                                            {
-                                                return adaptor.idToPos(id);
-                                            }
-                                        },
-                                        {
-                                            [&adaptor](const auto& data)
-                                            {
-                                                return adaptor.posToId(data);
-                                            }
-                                        });
-    for(int x = 0; x < 10000; x++)
-    path = pathfinder.search(startPoint, endPoint,
-                        {[&adaptor](const auto id)
-                        {
-                            return adaptor.idToPos(id);
-                        }},
-                        {[&adaptor](const auto& data)
-                        {
-                            return adaptor.posToId(data);
-                        }});
+    auto nodePath = pathfinder.search(adaptor.posToId(startPoint), adaptor.posToId(endPoint));
+
+    //Convert Ids onto map position
+    std::vector<Vectori> path;
+    path.reserve(nodePath.size());
+
+    for(const auto id : nodePath)
+        path.push_back(idToData(id));
+
+
+    //There is also a serach function that do the conversion between your data type
+    //And the id, it take lambdas to convert between the two
+    //Here's an exemple of how it would be called for this code
+//    auto path = pathfinder.search(startPoint, endPoint,
+//                                        {
+//                                            [&adaptor](const auto id)
+//                                            {
+//                                                return adaptor.idToPos(id);
+//                                            }
+//                                        },
+//                                        {
+//                                            [&adaptor](const auto& data)
+//                                            {
+//                                                return adaptor.posToId(data);
+//                                            }
+//                                        });
 
 
     //If we found a path we just want to remove the first and last node

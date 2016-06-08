@@ -44,25 +44,3 @@ float dist(Vectorf v1, Vectorf v2)
     Vectorf v(v1.x-v2.x, v1.y-v2.y);
     return std::sqrt(v.x*v.x + v.y*v.y);
 }
-
-template< typename T >
-typename std::vector<T>::iterator
-   insert_sorted( std::vector<T> & vec, T const& item )
-{
-    return vec.insert
-        (
-            std::upper_bound( vec.begin(), vec.end(), item ),
-            item
-        );
-}
-
-template< typename T, typename Pred >
-typename std::vector<T>::iterator
-    insert_sorted( std::vector<T> & vec, T const& item, Pred pred )
-{
-    return vec.insert
-        (
-           std::upper_bound( vec.begin(), vec.end(), item, pred ),
-           item
-        );
-}
