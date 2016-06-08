@@ -1,5 +1,44 @@
 # Lazy Theta* with optimization pathfinding
 
+Files:
+
+- pathfinding.hpp
+  - The main file, the only one you need
+  - Contain the algoritm 
+- tileadaptor.hpp
+  - To use the pathfinding class you'll need an adaptor, this is an exemple adaptor for tile grid
+- utility.hpp
+  - Dummy vector class and distance function used by tileadaptor
+- main.cpp
+  - Console based demo
+
+```
+######################################################################
+#S   #              #                                                #
+#    #              #                                                #
+#    #              #                                                #
+#    #              #                            2                  3#
+#    #              #                             ################## #
+#    #              #                                           #    #
+#    #              #                                           #4   #
+#    #              #                                           # ####
+#    #              #                                           #    #
+#    #              #                                           #    #
+#    #              #                                           #    #
+#    #              #                                           #    #
+#    #              #                                           #    #
+#   0               #                                           #    #
+#                   #                                           #    #
+#                                 1                             #5   #
+#                                                               #    #
+#                                                               #   E#
+######################################################################
+#  = walls
+S  = start
+E  = end
+number = path nodes
+```
+
 Implementation of the algorithm described here: http://aigamedev.com/open/tutorial/lazy-theta-star/
 
 At first I could find any code a part from this and honestly I had no idea of what line 37-38 means
