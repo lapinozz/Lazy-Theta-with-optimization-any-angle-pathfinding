@@ -69,7 +69,7 @@ int main()
     path.reserve(nodePath.size());
 
     for(const auto id : nodePath)
-        path.push_back(idToData(id));
+        path.push_back(adaptor.idToPos(id));
 
 
     //There is also a serach function that do the conversion between your data type
