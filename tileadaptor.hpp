@@ -147,7 +147,7 @@ public:
         if(pos.x != mMapSize.x - 1 && mIsTraversable({pos.x + 1, pos.y}))
             neighbors.push_back({posToId({pos.x + 1, pos.y}), cost});
 
-        if(pos.x != mMapSize.y - 1 != 0 && mIsTraversable({pos.x, pos.y + 1}))
+        if(pos.y != mMapSize.y - 1 && mIsTraversable({pos.x, pos.y + 1}))
             neighbors.push_back({posToId({pos.x, pos.y + 1}), cost});
 
         return neighbors;
